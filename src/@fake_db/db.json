@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Creamy Chicken",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+    "time": "30 dakika"
+  },
+  {
+    "id": 2,
+    "title": "Smoked Salmon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+    "time": "15 dakika"
+  },
+  {
+    "id": 3,
+    "title": "Pesto",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+    "time": "20 dakika"
+  },
+  {
+    "id": 4,
+    "title": "Potatoes",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+
+    "time": "23 dakika"
+  },
+  {
+    "id": 5,
+    "title": "Dill",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+    "time": "15 dakika"
+  }
+]
