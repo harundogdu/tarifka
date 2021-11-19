@@ -4,34 +4,100 @@
     "title": "Tavuk Sote",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
     "time": "30 dakika",
-    "ingredients": "5 malzeme"
+    "ingredients": "5 malzeme",
+    "A": "1 Soğan 1 Pırasa 2 Adet Patates",
+    "steps": [
+      {
+        "step1": "Soğanı kavurun"
+      },
+      {
+        "step2": "Pırasayı kavurun"
+      }
+    ]
   },
   {
     "id": 2,
     "title": "Tarhana Çorbası",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
     "time": "15 dakika",
-    "ingredients": "15 malzeme"
+    "ingredients": "15 malzeme",
+    "A": "1 Soğan 1 Pırasa 2 Adet Patates",
+    "steps": [
+      {
+        "step1": "Soğanı kavurun"
+      },
+      {
+        "step2": "Pırasayı kavurun"
+      },
+      {
+        "step3": "Patatesleri kavurun"
+      }
+    ]
   },
   {
     "id": 3,
     "title": "Kavurma",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
     "time": "20 dakika",
-    "ingredients": "10 malzeme"
+    "ingredients": "10 malzeme",
+    "A": "1 Soğan 1 Pırasa 2 Adet Patates",
+    "steps": [
+      {
+        "step1": "Soğanı kavurun"
+      }
+    ]
   },
   {
     "id": 4,
     "title": "Künefe",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
     "time": "23 dakika",
-    "ingredients": "6 malzeme"
+    "ingredients": "6 malzeme",
+    "A": "1 Soğan 1 Pırasa 2 Adet Patates",
+    "steps": [
+      {
+        "step1": "Soğanı kavurun"
+      },
+      {
+        "step2": "Pırasayı kavurun"
+      },
+      {
+        "step3": "Patatesleri kavurun"
+      },
+      {
+        "step4": "Künefe yapın"
+      },
+      {
+        "step5": "Künefe yapın"
+      }
+    ]
   },
   {
     "id": 5,
     "title": "Kırmızı Soslu Köfte",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
     "time": "15 dakika",
-    "ingredients": "4 malzeme"
+    "ingredients": "4 malzeme",
+    "A": "1 Soğan 1 Pırasa 2 Adet Patates",
+    "steps": [
+      {
+        "step1": "Soğanı kavurun"
+      },
+      {
+        "step2": "Pırasayı kavurun"
+      },
+      {
+        "step3": "Patatesleri kavurun"
+      },
+      {
+        "step4": "Kırmızı soslu köfteler yapın"
+      },
+      {
+        "step5": "Kırmızı soslu köfteler yapın"
+      },
+      {
+        "step6": "Kırmızı soslu köfteler yapın"
+      }
+    ]
   }
 ]
