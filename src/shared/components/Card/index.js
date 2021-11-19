@@ -1,10 +1,19 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import themes from '../../../config/themes';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
-const Card = ({item}) => {
+const Card = ({item, handleItemPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => handleItemPress(item)}>
       <Image source={{uri: item.image}} style={styles.image} />
       <View style={styles.innerContainer}>
         <Text style={styles.title}>{item.title}</Text>
@@ -13,7 +22,7 @@ const Card = ({item}) => {
           <Text style={styles.time}>{item.time}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

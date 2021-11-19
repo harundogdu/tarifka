@@ -1,13 +1,20 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import themes from '../config/themes';
 import SearchBox from '../shared/components/SearchBox';
 import DATA from '../@fake_db/db.json';
 import RecipePopular from '../shared/components/RecipePopular';
 import TabRecipe from '../shared/components/TabRecipe';
+import {useNavigation} from '@react-navigation/core';
 /* Function */
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = React.useState('');
+
+  const handleItemPress = item => {
+    navigation.navigate('Details', {item});
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.mainTitle}>Ne pişirmek istersin?</Text>
@@ -24,10 +31,10 @@ const HomeScreen = () => {
         <Text style={styles.subTitle}>Hepsini Gör</Text>
       </View>
       <View style={styles.recipesContainer}>
-        <RecipePopular DATA={DATA} />
+        <RecipePopular DATA={DATA} handleItemPress={handleItemPress} />
       </View>
       <View style={styles.recipesTabContainer}>
-        <TabRecipe DATA={DATA} />
+        <TabRecipe DATA={DATA} handleItemPress={handleItemPress} />
       </View>
     </SafeAreaView>
   );

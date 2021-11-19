@@ -1,11 +1,20 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import themes from '../../../config/themes';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 
-const TabCard = ({item}) => {
+const TabCard = ({item, handleItemPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => handleItemPress(item)}>
       <Image source={{uri: item.image}} style={styles.image} />
       <View style={styles.innerContainer}>
         <Text style={styles.title}>{item.title}</Text>
@@ -15,7 +24,7 @@ const TabCard = ({item}) => {
         </View>
         <Text style={styles.ingredients}>{item.ingredients}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

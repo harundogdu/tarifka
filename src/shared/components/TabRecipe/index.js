@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import themes from '../../../config/themes';
 import TabCard from '../TabCard';
 
-const TabRecipe = ({DATA}) => {
+const TabRecipe = ({DATA, handleItemPress}) => {
   const [selected, setSelected] = React.useState(0);
   const tabs = ['Tüm Tarifler', 'Et Yemekleri', 'Çorbalar', 'İçecekler'];
   return (
@@ -40,7 +34,13 @@ const TabRecipe = ({DATA}) => {
       <View style={styles.innerContainer}>
         <FlatList
           data={DATA}
-          renderItem={({item}) => <TabCard item={item} key={item.id} />}
+          renderItem={({item}) => (
+            <TabCard
+              handleItemPress={handleItemPress}
+              item={item}
+              key={item.id}
+            />
+          )}
           showsVerticalScrollIndicator={false}
         />
       </View>
