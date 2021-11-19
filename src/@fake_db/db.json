@@ -1,33 +1,37 @@
 [
   {
     "id": 1,
-    "title": "Creamy Chicken",
+    "title": "Tavuk Sote",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
-    "time": "30 dakika"
+    "time": "30 dakika",
+    "ingredients": "5 malzeme"
   },
   {
     "id": 2,
-    "title": "Smoked Salmon",
+    "title": "Tarhana Çorbası",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
-    "time": "15 dakika"
+    "time": "15 dakika",
+    "ingredients": "15 malzeme"
   },
   {
     "id": 3,
-    "title": "Pesto",
+    "title": "Kavurma",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
-    "time": "20 dakika"
+    "time": "20 dakika",
+    "ingredients": "10 malzeme"
   },
   {
     "id": 4,
-    "title": "Potatoes",
+    "title": "Künefe",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
-
-    "time": "23 dakika"
+    "time": "23 dakika",
+    "ingredients": "6 malzeme"
   },
   {
     "id": 5,
-    "title": "Dill",
+    "title": "Kırmızı Soslu Köfte",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
-    "time": "15 dakika"
+    "time": "15 dakika",
+    "ingredients": "4 malzeme"
   }
 ]
