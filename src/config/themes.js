@@ -1,5 +1,18 @@
 export default {
   mainColor: '#ff9800',
   textColor: '#41423F',
+  light: '#F2F4EC',
   white: '#FFFFFF',
+  black: '#000000',
+  gray: '#9E9E9E',
+  lightGray: '#F5F5F5',
+  darkGray: '#757575',
+  red: '#F44336',
+  green: '#4CAF50',
+  blue: '#2196F3',
+  yellow: '#FFEB3B',
+  orange: '#FF9800',
+  purple: '#9C27B0',
+  pink: '#E91E63',
+  cyan: '#00BCD4',
 };
