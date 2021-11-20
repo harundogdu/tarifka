@@ -34,12 +34,9 @@ const TabRecipe = ({DATA, handleItemPress}) => {
       <View style={styles.innerContainer}>
         <FlatList
           data={DATA}
+          keyExtractor={(item, index) => item.id.toString()}
           renderItem={({item}) => (
-            <TabCard
-              handleItemPress={handleItemPress}
-              item={item}
-              key={item.id}
-            />
+            <TabCard handleItemPress={handleItemPress} item={item} />
           )}
           showsVerticalScrollIndicator={false}
         />

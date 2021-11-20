@@ -50,7 +50,8 @@ function TabBar({state, descriptors, navigation}) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{flex: 1, alignItems: 'center'}}>
+            style={{flex: 1, alignItems: 'center'}}
+            key={index}>
             {route.name === 'Home' && (
               <>
                 <IonicIcons

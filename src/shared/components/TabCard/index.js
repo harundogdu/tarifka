@@ -22,7 +22,7 @@ const TabCard = ({item, handleItemPress}) => {
           <IonicIcon name="time-outline" size={24} />
           <Text style={styles.time}>{item.time}</Text>
         </View>
-        <Text style={styles.ingredients}>{item.ingredients}</Text>
+        <Text style={styles.ingredients}>{item.ingredientsCount} Malzeme</Text>
       </View>
     </TouchableOpacity>
   );

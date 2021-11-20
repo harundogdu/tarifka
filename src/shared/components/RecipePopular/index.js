@@ -6,9 +6,9 @@ const RecipePopular = ({DATA, handleItemPress}) => {
   return (
     <FlatList
       data={DATA}
-      keyExtractor={item => item.id}
+      keyExtractor={(item, index) => item.id.toString()}
       renderItem={({item}) => (
-        <Card handleItemPress={handleItemPress} item={item} key={item.id} />
+        <Card handleItemPress={handleItemPress} item={item} />
       )}
       horizontal
       showsHorizontalScrollIndicator={false}
