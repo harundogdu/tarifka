@@ -2,13 +2,14 @@ import React from 'react';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import themes from '../config/themes';
 import SearchBox from '../shared/components/SearchBox';
-import DATA from '../@fake_db/db.json';
 import RecipePopular from '../shared/components/RecipePopular';
 import TabRecipe from '../shared/components/TabRecipe';
 import {useNavigation} from '@react-navigation/core';
+import {useRecipes} from '../shared/context/RecipeContext';
 /* Function */
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const {recipes} = useRecipes();
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const handleItemPress = item => {
@@ -31,10 +32,10 @@ const HomeScreen = () => {
         <Text style={styles.subTitle}>Hepsini Gör</Text>
       </View>
       <View style={styles.recipesContainer}>
-        <RecipePopular DATA={DATA} handleItemPress={handleItemPress} />
+        <RecipePopular DATA={recipes} handleItemPress={handleItemPress} />
       </View>
       <View style={styles.recipesTabContainer}>
-        <TabRecipe DATA={DATA} handleItemPress={handleItemPress} />
+        <TabRecipe DATA={recipes} handleItemPress={handleItemPress} />
       </View>
     </SafeAreaView>
   );
