@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import themes from '../config/themes';
 
 const WelcomeScreen = ({navigation}) => {
-  const handlePress = () => navigation.navigate('Home');
+  const handlePress = () => navigation.navigate('TabNavigator');
 
   return (
     <View style={styles.container}>
