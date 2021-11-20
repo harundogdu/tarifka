@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Dimensions,
   Image,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -25,7 +24,9 @@ const DetailsScreen = ({route}) => {
               <Text style={styles.time}>{item.time}</Text>
             </View>
             <View style={styles.ingredientsContainer}>
-              <Text style={styles.ingredients}>{item.ingredients}</Text>
+              <Text style={styles.ingredients}>
+                {item.ingredientsCount} Malzeme
+              </Text>
             </View>
           </View>
         </View>
@@ -33,18 +34,14 @@ const DetailsScreen = ({route}) => {
       <View style={styles.downContainer}>
         <View style={styles.ingredientsDownContainer}>
           <Text style={styles.ingredientsTitle}>Malzemeler</Text>
-          <Text style={styles.ingredientsText}>{item.A}</Text>
+          <Text style={styles.ingredientsText}>{item.ingredients}</Text>
         </View>
         <Indicator />
         <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-          {item.steps.map((step, index) => {
-            return (
-              <View style={styles.steps} key={index}>
-                <Text style={styles.stepTitle}>Adım {++index}</Text>
-                <Text style={styles.stepDesc}>{Object.values(step)[0]}</Text>
-              </View>
-            );
-          })}
+          <View style={styles.steps}>
+            <Text style={styles.stepTitle}>Adımlar</Text>
+            <Text style={styles.stepDesc}>{item.steps}</Text>
+          </View>
         </ScrollView>
       </View>
     </View>
@@ -128,11 +125,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   stepTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     color: themes.mainColor,
   },
   stepDesc: {
-    fontSize: 16,
+    fontSize: 18,
+    textAlign: 'justify',
   },
 });
