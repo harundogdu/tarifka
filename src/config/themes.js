@@ -1,5 +1,5 @@
 export default {
-  mainColor: '#ff9800',
+  mainColor: '#E91E63',
   textColor: '#41423F',
   light: '#F2F4EC',
   white: '#FFFFFF',
