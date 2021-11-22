@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Text, StyleSheet, SafeAreaView, BackHandler} from 'react-native';
 import themes from '../config/themes';
 import SearchBox from '../shared/components/SearchBox';
 import RecipePopular from '../shared/components/RecipePopular';
@@ -16,6 +16,13 @@ const HomeScreen = () => {
     navigation.navigate('Details', {item});
   };
 
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      BackHandler.exitApp();
+      return true;
+    });
+  }, []);
+  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.mainTitle}>Ne pişirmek istersin?</Text>
