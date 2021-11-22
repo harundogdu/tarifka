@@ -1,6 +1,12 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {Alert, ScrollView, StyleSheet, View} from 'react-native';
+import {
+  Alert,
+  KeyboardAvoidingView,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import AddRecipeCard from '../shared/components/AddRecipeCard';
 import {useRecipes} from '../shared/context/RecipeContext';
 
@@ -47,6 +53,7 @@ const AddScreen = () => {
             setTitle('');
             setTime('');
             setIngredients('');
+            setIngredientsCount('');
             setSteps('');
             navigation.navigate('Home');
           },

@@ -20,7 +20,7 @@ export default function App() {
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
             <Stack.Screen name="TabNavigator" component={TabNavigator} />
             <Stack.Screen name="Details" component={DetailsScreen} />
-          </Stack.Group>         
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
     </RecipeProvider>
@@ -38,7 +38,11 @@ function TabNavigator() {
         options={{title: 'Tarifler', headerShown: false}}
         component={HomeScreen}
       />
-      <Tab.Screen name="Add" component={AddScreen} />
+      <Tab.Screen
+        name="Add"
+        options={{title: 'Tarif Ekle'}}
+        component={AddScreen}
+      />
     </Tab.Navigator>
   );
 }
