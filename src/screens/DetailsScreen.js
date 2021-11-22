@@ -39,7 +39,7 @@ const DetailsScreen = ({route}) => {
         <Indicator />
         <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
           <View style={styles.steps}>
-            <Text style={styles.stepTitle}>Adımlar</Text>
+            <Text style={styles.stepTitle}>Yapılışı</Text>
             <Text style={styles.stepDesc}>{item.steps}</Text>
           </View>
         </ScrollView>
