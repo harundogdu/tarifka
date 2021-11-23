@@ -5,7 +5,7 @@ import TabCard from '../TabCard';
 
 const TabRecipe = ({DATA, handleItemPress}) => {
   const [selected, setSelected] = React.useState(0);
-  const tabs = ['Tüm Tarifler', 'Et Yemekleri', 'Çorbalar', 'İçecekler'];
+  const tabs = ['Tüm Tarifler', 'Et Yemekleri', 'Çorbalar', 'Tatlılar'];
   return (
     <View style={styles.container}>
       <View style={styles.groupTitle}>

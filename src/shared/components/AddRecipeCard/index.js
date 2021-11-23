@@ -11,11 +11,14 @@ import IonicIcons from 'react-native-vector-icons/Ionicons';
 
 const AddRecipeCard = ({
   iconName = null,
+  iconNameRight = null,
   text = null,
   onPress = null,
   type = 'text',
   value = null,
   onChangeText = null,
+  disabled = false,
+  deleteImagePress = null,
 }) => {
   return type === 'save' ? (
     <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
@@ -23,14 +26,32 @@ const AddRecipeCard = ({
         <Text style={styles.text}>Tarifi Kaydet</Text>
       </View>
     </TouchableOpacity>
+  ) : type === 'photo' ? (
+    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+      <View style={styles.saveContainer}>
+        <Text style={styles.text}>Fotoğraf Seç</Text>
+      </View>
+    </TouchableOpacity>
   ) : (
     <View style={styles.buttonContainer}>
       <View style={styles.timeContainer}>
-        <IonicIcons name={iconName} size={40} color={themes.red} />
+        {iconName && (
+          <IonicIcons name={iconName} size={40} color={themes.red} />
+        )}
+        {type === 'photoText' && (
+          <IonicIcons
+            name={iconNameRight}
+            size={40}
+            color={themes.red}
+            onPress={deleteImagePress}
+          />
+        )}
+
         {(type === 'text' ||
           type === 'input' ||
           type === 'photo' ||
-          type === 'number') && (
+          type === 'number' ||
+          type === 'photoText') && (
           <TextInput
             placeholder={text}
             style={[
@@ -43,6 +64,7 @@ const AddRecipeCard = ({
             multiline={true}
             value={value}
             onChangeText={onChangeText}
+            editable={!disabled}
           />
         )}
       </View>

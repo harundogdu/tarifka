@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     minHeight: 150,
     width: '100%',
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     overflow: 'hidden',
   },
   innerContainer: {

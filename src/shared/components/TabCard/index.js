@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     minHeight: 100,
     width: '40%',
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     overflow: 'hidden',
   },
   innerContainer: {
