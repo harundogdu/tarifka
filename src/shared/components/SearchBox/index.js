@@ -30,7 +30,7 @@ const SearchBox = ({placeholder, value, onChangeText, clearText}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: themes.light,
+    backgroundColor: themes.lightGray,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

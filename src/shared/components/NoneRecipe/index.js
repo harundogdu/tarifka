@@ -8,7 +8,7 @@ const NoneRecipe = () => {
         source={require('../../../assets/no-found.png')}
         resizeMode="contain"
         style={styles.image}>
-        <Text style={styles.title}>Henüz Tarif Eklenmedi!</Text>
+        <Text style={styles.title}>Tarif Bulunamadı!</Text>
       </ImageBackground>
     </View>
   );
