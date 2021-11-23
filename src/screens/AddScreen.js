@@ -1,14 +1,9 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {
-  Alert,
-  KeyboardAvoidingView,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {Alert, ScrollView, StyleSheet, View, Text} from 'react-native';
 import AddRecipeCard from '../shared/components/AddRecipeCard';
 import {useRecipes} from '../shared/context/RecipeContext';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const AddScreen = () => {
   const {recipes, setRecipes} = useRecipes();
@@ -62,6 +57,28 @@ const AddScreen = () => {
     }
   };
 
+  const handleImage = async () => {
+    const options = {
+      title: 'Fotoğraf Seç',
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+
+    await launchImageLibrary(options, response => {
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        setImage(response.assets[0].uri);
+      }
+    });
+  };
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -71,13 +88,19 @@ const AddScreen = () => {
           value={title}
           onChangeText={setTitle}
         />
-        <AddRecipeCard
-          iconName="camera-outline"
-          text="Fotoğraf"
-          type="photo"
-          value={image}
-          onChangeText={setImage}
-        />
+        {image ? (
+          <AddRecipeCard
+            iconNameRight="checkmark-outline"
+            text="Fotoğraf"
+            type="photoText"
+            value={image}
+            onChangeText={setImage}
+            disabled
+            deleteImagePress={() => setImage('')}
+          />
+        ) : (
+          <AddRecipeCard text="Fotoğraf" onPress={handleImage} type="photo" />
+        )}
         <AddRecipeCard
           iconName="time-outline"
           text="Zaman"
