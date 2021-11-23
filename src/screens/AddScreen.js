@@ -6,7 +6,7 @@ import {useRecipes} from '../shared/context/RecipeContext';
 import {launchImageLibrary} from 'react-native-image-picker';
 
 const AddScreen = () => {
-  const {recipes, setRecipes} = useRecipes();
+  const {recipes, setRecipes, storeData} = useRecipes();
   const navigation = useNavigation();
 
   const [title, setTitle] = React.useState('');
@@ -28,18 +28,16 @@ const AddScreen = () => {
       alert('Lütfen boş alanları doldurunuz!');
       return;
     } else {
-      setRecipes([
-        ...recipes,
-        {
-          id: `_${Math.random(1000000)}_`,
-          title,
-          image,
-          time,
-          ingredients,
-          ingredientsCount,
-          steps,
-        },
-      ]);
+      const newRecipe = {
+        id: `_${Math.random(1000000)}_`,
+        title,
+        image,
+        time,
+        ingredients,
+        ingredientsCount,
+        steps,
+      };
+      setRecipes([...recipes, newRecipe]);
       Alert.alert('Başarılı!', 'Tarif Başarıyla Eklendi!', [
         {
           text: 'Tamam',

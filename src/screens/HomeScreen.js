@@ -9,20 +9,20 @@ import {useRecipes} from '../shared/context/RecipeContext';
 /* Function */
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const {recipes} = useRecipes();
+  const {recipes,getData} = useRecipes();
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const handleItemPress = item => {
     navigation.navigate('Details', {item});
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     BackHandler.addEventListener('hardwareBackPress', () => {
       BackHandler.exitApp();
       return true;
     });
-  }, []);
-  
+  }, []); */
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.mainTitle}>Ne pişirmek istersin?</Text>
