@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   ingredientsTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: themes.textColor,
+    color: themes.mainColor,
   },
   ingredientsText: {
     fontSize: 20,

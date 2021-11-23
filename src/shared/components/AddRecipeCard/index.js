@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   StyleSheet,
   Text,
   TextInput,
@@ -36,22 +37,28 @@ const AddRecipeCard = ({
     <View style={styles.buttonContainer}>
       <View style={styles.timeContainer}>
         {iconName && (
-          <IonicIcons name={iconName} size={40} color={themes.red} />
+          <IonicIcons name={iconName} size={40} color={themes.mainColor} />
         )}
         {type === 'photoText' && (
-          <IonicIcons
-            name={iconNameRight}
-            size={40}
-            color={themes.red}
-            onPress={deleteImagePress}
-          />
+          <>
+            <IonicIcons
+              name={iconNameRight}
+              size={40}
+              color={themes.mainColor}
+              onPress={deleteImagePress}
+            />
+            <TouchableOpacity
+              style={styles.image}
+              onPress={() => handleImage()}>
+              <Image source={{uri: value}} style={styles.image} />
+            </TouchableOpacity>
+          </>
         )}
 
         {(type === 'text' ||
           type === 'input' ||
           type === 'photo' ||
-          type === 'number' ||
-          type === 'photoText') && (
+          type === 'number') && (
           <TextInput
             placeholder={text}
             style={[
@@ -121,5 +128,12 @@ const styles = StyleSheet.create({
   medium: {
     height: 100,
     padding: 20,
+  },
+
+  image: {
+    width: '100%',
+    height: 150,
+    marginBottom: 10,
+    resizeMode: 'contain',
   },
 });
