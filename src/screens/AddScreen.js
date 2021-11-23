@@ -1,12 +1,20 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {Alert, ScrollView, StyleSheet, View, Text} from 'react-native';
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import AddRecipeCard from '../shared/components/AddRecipeCard';
 import {useRecipes} from '../shared/context/RecipeContext';
 import {launchImageLibrary} from 'react-native-image-picker';
 
 const AddScreen = () => {
-  const {recipes, setRecipes, storeData} = useRecipes();
+  const {recipes, setRecipes} = useRecipes();
   const navigation = useNavigation();
 
   const [title, setTitle] = React.useState('');
@@ -86,14 +94,12 @@ const AddScreen = () => {
           value={title}
           onChangeText={setTitle}
         />
-        {image ? (
+        {image ? (   
           <AddRecipeCard
             iconNameRight="checkmark-outline"
             text="Fotoğraf"
             type="photoText"
             value={image}
-            onChangeText={setImage}
-            disabled
             deleteImagePress={() => setImage('')}
           />
         ) : (
@@ -121,7 +127,7 @@ const AddScreen = () => {
         />
         <AddRecipeCard
           iconName="clipboard-outline"
-          text="Adımlar"
+          text="Hazırlanışı"
           type="input"
           value={steps}
           onChangeText={setSteps}
