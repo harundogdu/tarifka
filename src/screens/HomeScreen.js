@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet, SafeAreaView, BackHandler} from 'react-native';
 import themes from '../config/themes';
 import SearchBox from '../shared/components/SearchBox';
@@ -6,11 +6,11 @@ import RecipePopular from '../shared/components/RecipePopular';
 import TabRecipe from '../shared/components/TabRecipe';
 import {useNavigation} from '@react-navigation/core';
 import {useRecipes} from '../shared/context/RecipeContext';
+import NoneRecipe from '../shared/components/NoneRecipe';
 /* Function */
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const {recipes,getData} = useRecipes();
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const {searchQuery, setSearchQuery, filterRecipes} = useRecipes();
 
   const handleItemPress = item => {
     navigation.navigate('Details', {item});
@@ -34,16 +34,29 @@ const HomeScreen = () => {
           onChangeText={query => setSearchQuery(query)}
         />
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.mainSubTitle}>En Popülerler</Text>
-        <Text style={styles.subTitle}>Hepsini Gör</Text>
-      </View>
-      <View style={styles.recipesContainer}>
-        <RecipePopular DATA={recipes} handleItemPress={handleItemPress} />
-      </View>
-      <View style={styles.recipesTabContainer}>
-        <TabRecipe DATA={recipes} handleItemPress={handleItemPress} />
-      </View>
+
+      {filterRecipes().length > 0 ? (
+        <>
+          <View style={styles.textContainer}>
+            <Text style={styles.mainSubTitle}>En Popülerler</Text>
+            <Text style={styles.subTitle}>Hepsini Gör</Text>
+          </View>
+          <View style={styles.recipesContainer}>
+            <RecipePopular
+              DATA={filterRecipes()}
+              handleItemPress={handleItemPress}
+            />
+          </View>
+          <View style={styles.recipesTabContainer}>
+            <TabRecipe
+              DATA={filterRecipes()}
+              handleItemPress={handleItemPress}
+            />
+          </View>
+        </>
+      ) : (
+        <NoneRecipe />
+      )}
     </SafeAreaView>
   );
 };

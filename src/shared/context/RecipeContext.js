@@ -5,6 +5,17 @@ export const RecipeContext = createContext();
 
 export const RecipeProvider = ({children}) => {
   const [recipes, setRecipes] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filterRecipes = () => {
+    if (searchQuery.length === 0) {
+      return recipes;
+    } else {
+      return recipes.filter(recipe =>
+        recipe.title.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+    }
+  };
 
   const storeData = async () => {
     try {
@@ -28,6 +39,10 @@ export const RecipeProvider = ({children}) => {
   };
 
   useEffect(() => {
+    filterRecipes();
+  }, [searchQuery]);
+
+  useEffect(() => {
     getData();
   }, []);
 
@@ -39,7 +54,10 @@ export const RecipeProvider = ({children}) => {
     recipes,
     setRecipes,
     storeData,
-    getData
+    getData,
+    searchQuery,
+    setSearchQuery,
+    filterRecipes,
   };
   return (
     <RecipeContext.Provider value={contextValues}>
